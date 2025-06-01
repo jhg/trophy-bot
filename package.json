@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "sequelize": "^6.37.7",
+    "toml-node": "^0.0.1"
+  },
+  "name": "trophy-bot",
+  "version": "1.0.0",
+  "description": "Trophy bot for Discord",
+  "main": "main.js",
+  "license": "MIT"
+}
