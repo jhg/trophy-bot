@@ -17,13 +17,13 @@
 
 Images are also stored to prevent automatic Discord removal which would break the purpose of
  having good thumbnails for trophies. Removing a trophy will also remove any data about it
- including the thumbnail from the servers without persistence.<br>
+ including the thumbnail from the servers without persistence.
 
 Awards and rewards are also stored to make the bot work properly, this means that some
- user IDs and role IDs are also saved.<br> 
+ user IDs and role IDs are also saved.
 
 Trophies are per-server, and the Server ID is saved to be linked to every content
- created with the bot.<br>
+ created with the bot.
 
 When the bot handles an exception, it sends info about the error, including the command itself,
  to the developer through Discord.

@@ -7,7 +7,7 @@ This software is provided "as is" without any warranty. Use at your own risk.
  actual use on the official bot). Any self-hosted versions or forks (thus, also self-hosted)
  are exempt to these terms **at my own operational level**. However, the [LICENSE](./LICENSE)
  should be still applied on any forks or self-hosted versions of the bot, as specified
- by its own conditions.<br>
+ by its own conditions.
 
 I'm not responsible for any wrong use of the bot on forks or self-hosted versions.
 
