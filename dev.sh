@@ -6,6 +6,9 @@ switch ($action) {
   case "build":
     docker-compose build
     ;;
+  case "run":
+    docker-compose up
+    ;;
   case "up":
     docker-compose up -d
     ;;
