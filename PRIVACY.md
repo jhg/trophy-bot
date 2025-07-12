@@ -13,7 +13,8 @@
 
 [Trophy Bot](https://github.com/AntikoreDev/trophy-bot) stores data about trophies you create
  and award. That data includes every parameter you give to the trophy, such as the name, emoji,
- description etc, this is required in order to the proper work for the bot.
+ description etc, this is required in order to the proper work for the bot. It's based on
+ legitimate interests: maintaining functionality, generating statistics, and debugging.
 
 Images are also stored to prevent automatic Discord removal which would break the purpose of
  having good thumbnails for trophies. Removing a trophy will also remove any data about it
@@ -25,8 +26,12 @@ Awards and rewards are also stored to make the bot work properly, this means tha
 Trophies are per-server, and the Server ID is saved to be linked to every content
  created with the bot.
 
-When the bot handles an exception, it sends info about the error, including the command itself,
- to the developer through Discord.
+When the bot handles an exception, it sends anonymized debug info (no user-identifying data)
+ to the developer via Discord.
+
+**Retention:** Error logs are stored only as long as necessary to fix bugs (maximum 30 days).
+
+Any bug reports, stripped of personal data, will be published indefinitely as public GitHub issues.
 
 ## What data is visible for others?
 
@@ -39,7 +44,12 @@ When the bot handles an exception, it sends info about the error, including the 
 
 Kicking the bot from your server won't remove any data stored for your server from it, for
  security reasons, but you can remove all of the data for your server including images using
- the command `/forgetme` without persistence (this will kick the bot itself too). This command
- is only enabled to be performed by the server owner, to avoid malicious behaviour.
+ the command `/forgetme` without persistence (this will kick the bot itself too).
+
+This command is only enabled to be performed by the server owner, to avoid malicious behaviour.
+
+You may request access, rectification, erasure, restriction, objection, or portability. Contact via the [Support Server](https://discord.gg/kNmgU44xgU).
+
+**Approximate response time:** 72 hours.
 
 Any other questions you have about this, ask freely on the [Support Server](https://discord.gg/kNmgU44xgU)
