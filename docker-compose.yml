@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  trophybot:
+    build: .
+    container_name: trophybot
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./json.sqlite:/app/json.sqlite
+      - ./example_db.json:/app/example_db.json
+      - ./images:/app/images
+      - ./.env:/app/.env
+    tty: true
