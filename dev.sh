@@ -1,25 +1,25 @@
 #!/bin/sh
 
-$action="$1"
+action="$1"
 
-switch ($action) {
-  case "build":
+case "$action" in
+  build)
     docker-compose build
     ;;
-  case "run":
+  run)
     docker-compose up
     ;;
-  case "up":
+  up)
     docker-compose up -d
     ;;
-  case "down":
+  down)
     docker-compose down
     ;;
-  case "logs":
+  logs)
     docker-compose logs -f
     ;;
-  default:
+  *)
     echo "Unknown action: $action"
     exit 1
     ;;
-}
+esac
