@@ -2,8 +2,8 @@
 
 This software is provided "as is" without any warranty. Use at your own risk.
 
-**To clarify,** these terms only apply to the bot's service provided by me,
- [AntikoreDev](https://www.antikore.dev/) (that means these are only applied for the
+**To clarify,** these terms only apply to the bot's service provided by
+ [Jesus Hernandez](https://jesushernandez.net/) (that means these are only applied for the
  actual use on the official bot). Any self-hosted versions or forks (thus, also self-hosted)
  are exempt to these terms **at my own operational level**. However, the [LICENSE](./LICENSE)
  should be still applied on any forks or self-hosted versions of the bot, as specified
@@ -11,7 +11,7 @@ This software is provided "as is" without any warranty. Use at your own risk.
 
 I'm not responsible for any wrong use of the bot on forks or self-hosted versions.
 
-By using [Trophy Bot](https://github.com/AntikoreDev/trophy-bot), you're implicitly agreeing
+By using [Trophy Bot](https://github.com/jhg/trophy-bot), you're implicitly agreeing
  with these terms, otherwise you should stop using it.
 
 ## List of terms
