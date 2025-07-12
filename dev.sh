@@ -1,10 +1,13 @@
 #!/bin/sh
 
 touch json.sqlite
+chmod 666 json.sqlite
 touch example_db.json
+chmod 666 example_db.json
 
 if [ ! -d images ]; then
   mkdir images
+  chmod 777 images
 fi
 
 action="$1"
