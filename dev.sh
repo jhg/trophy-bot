@@ -1,9 +1,7 @@
 #!/bin/sh
 
-touch json.sqlite
-chmod 666 json.sqlite
-touch example_db.json
-chmod 666 example_db.json
+touch json.sqlite example_db.json
+chmod 666 json.sqlite example_db.json
 
 if [ ! -d images ]; then
   mkdir images
