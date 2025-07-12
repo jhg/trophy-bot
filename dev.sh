@@ -1,5 +1,12 @@
 #!/bin/sh
 
+touch json.sqlite
+touch example_db.json
+
+if [ ! -d images ]; then
+  mkdir images
+fi
+
 action="$1"
 
 case "$action" in
