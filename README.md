@@ -1,4 +1,5 @@
 # Trophy Bot
+
 <div align="center">
   <a href = "https://github.com/AntikoreDev/trophy-bot/pulls"><img alt = "Pull Requests" src = "https://img.shields.io/github/issues-pr/AntikoreDev/trophy-bot?style=for-the-badge"></a>
   <a href = "https://github.com/AntikoreDev/trophy-bot/issues"><img alt = "Issues" src = "https://img.shields.io/github/issues/AntikoreDev/trophy-bot?style=for-the-badge"></a>
@@ -17,7 +18,9 @@ You can then give reward roles for reaching certain scores, or having a leaderbo
 To get started, simply type `/help` in your server to see a few basic info.
 
 ## Features
+
 This bot includes the following features:
+
 * Create and customize trophies for your server users.
 * Award different value trophies for your servers.
 * Set custom name, description, image, value, icon, etc. to your trophies
@@ -27,9 +30,10 @@ This bot includes the following features:
 * Simple to use and easy to understand.
 
 ## Support Server
-You can join our support server to get help and report issues:
-[Click Here](https://discord.gg/kNmgU44xgU)
+
+You can [join our support server](https://discord.gg/kNmgU44xgU) to get help and report issues:
 
 ## Contributing
+
 If you like this bot, you can help by contributing to it.
 [Buy me a coffee](https://ko-fi.com/antikore)
