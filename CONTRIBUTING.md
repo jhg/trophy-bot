@@ -15,6 +15,8 @@ Thank you for your interest in contributing!
 2. Install the dependencies:
 
    ```bash
+   nvm install 18
+   nvm use 18
    npm install
    ```
 
