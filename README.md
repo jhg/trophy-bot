@@ -36,4 +36,17 @@ You can [join our support server](https://discord.gg/kNmgU44xgU) to get help and
 ## Contributing
 
 If you like this bot, you can help by contributing to it.
-[Buy me a coffee](https://ko-fi.com/antikore)
+
+Or, [buy a coffee for Antikore](https://ko-fi.com/antikore), the creator of this bot.
+
+## About fork jhg/trophy-bot
+
+It'll continue development of new features and improvements, and maintenance for fix bugs.
+
+* What about the [terms of service](./TERMS.md)?
+  * It'll continue to be same as the original bot for [Jesus' hosted version](https://github.com/jhg).
+  * Self-hosted versions or forks are exempt from these terms.
+
+* What about the [privacy policy](./PRIVACY.md)?
+  * Will continue to be same as the original bot for [Jesus' hosted version](https://github.com/jhg).
+  * Self-hosted versions or forks are exempt from these terms.
