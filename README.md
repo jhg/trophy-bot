@@ -13,7 +13,10 @@
 **Trophy Bot** is a Discord bot made with [Discord.js](https://github.com/discordjs/discord.js) v14
 
 With Trophy Bot, you can award trophies to users. You can create your own trophies per server with a custom name, description, image and even value, and assign them to users by doing stuff you think deserves to be awarded.
+
 You can then give reward roles for reaching certain scores, or having a leaderboard for the user scores.
+
+<a href="https://discord.com/oauth2/authorize?client_id=985134052665356299&permissions=34816&scope=applications.commands%20bot">Add Trophy Bot to your server</a>
 
 To get started, simply type `/help` in your server to see a few basic info.
 
