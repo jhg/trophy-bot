@@ -42,9 +42,11 @@ If you like this bot, you can help by contributing to it.
 
 Or, [buy a coffee for Antikore](https://ko-fi.com/antikore), the creator of this bot.
 
-## About fork jhg/trophy-bot
+## About change of maintainer to jhg
 
-It'll continue development of new features and improvements, and maintenance for fix bugs.
+It'll continue development of new features and improvements, and maintenance for fix bugs,
+ without major changes for users. The original developer needs to focus on other projects,
+ and that's why this maintenance change is happening. Nothing to worry about.
 
 * What about the [terms of service](./TERMS.md)?
   * It'll continue to be same as the original bot for [Jesus' hosted version](https://github.com/jhg).
