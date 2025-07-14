@@ -14,6 +14,9 @@ case "$action" in
   build)
     docker-compose build
     ;;
+  clean)
+    docker-compose down --rmi all
+    ;;
   run)
     docker-compose up
     ;;

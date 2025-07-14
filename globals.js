@@ -335,14 +335,16 @@ async function fetchModules(dir, ext = '.js', command = false, first = true){
 	if (command && first){
 		const rest = new REST({ version: '9' }).setToken(process.env.DISCORD_TOKEN);
 
-		if (process.platform === "win32"){
+		if (process.env.DEBUG == "true"){
+			console.log('Updating commands for testing servers...');
 			for (const server of testingServers){
-				await rest.put(Routes.applicationGuildCommands('985903758607265832', server), { body: commands })
+				await rest.put(Routes.applicationGuildCommands(process.env.DISCORD_BOT_ID, server), { body: commands })
 					.then()
 					.catch(console.error);
 			}
 		}else{
-			await rest.put(Routes.applicationCommands('985134052665356299'), { body: commands })
+			console.log('Updating commands for all servers...');
+			await rest.put(Routes.applicationCommands(process.env.DISCORD_BOT_ID), { body: commands })
 				.then()
 				.catch(console.error);
 		}
@@ -391,7 +393,8 @@ function isBanned(id){
 const supportServer = '985439832388042822';
 
 const testingServers = [
-	'985439832388042822'
+	'985439832388042822',
+	'1393760778972041258'
 ]
 
 
