@@ -1,6 +1,6 @@
 #!/bin/sh
 
-touch json.sqlite example_db.json
+touch json.sqlite example_db.json .env
 chmod 666 json.sqlite example_db.json
 
 if [ ! -d images ]; then
@@ -30,7 +30,9 @@ case "$action" in
     docker-compose logs -f
     ;;
   *)
-    echo "Unknown action: $action"
-    exit 1
+    docker-compose down --rmi all
+    docker-compose build
+    docker-compose up
+    docker-compose down --rmi all
     ;;
 esac
