@@ -13,7 +13,6 @@ module.exports = {
 		.addStringOption(option => option.setName('emoji').setDescription('A new emoji for the trophy, leave blank for default').setRequired(false))
 		.addStringOption(option => option.setName('dedication').setDescription('A new dedication for the trophy').setRequired(false))
 		.addStringOption(option => option.setName('details').setDescription('A new details text for the trophy').setRequired(false))
-		.addBooleanOption(option => option.setName('tradeable').setDescription('A new tradeability status for the trophy').setRequired(false))
 		.addAttachmentOption(option => option.setName('image').setDescription('A new image for the trophy').setRequired(false)),
 		
 	async run (interaction) {
@@ -48,7 +47,6 @@ module.exports = {
 		// const value = interaction.options?.get('value')?.value || current.value;
 		const image = interaction.options?.getAttachment('image')?.url || current.image;
 		const dedic = interaction.options?.get('dedication')?.value || null;
-		const tradeable = interaction.options?.get('tradeable')?.value ?? false;
 		const details = interaction.options?.get('details')?.value || current.details || "No details provided.";
 
 				// Error handling
@@ -106,24 +104,30 @@ module.exports = {
 
 		// If there is a dedicated user, set it, else, ignore it
 		if (dedic){
-
-			// Try to parse the string as an user
-			const dedicUser = await parseUser(client, dedic.trim(), null, guild, true);
-
-			// If there is an user parsed
-			if (dedicUser){
-
-				// Set the user as the dedication
-				dedication = {
-					user: dedicUser.id,
-					name: dedicUser.username,
-				}
-			} else {
-
-				// Set the string as the dedication
+			if (dedic === "-"){
 				dedication = {
 					user: null,
-					name: dedic,
+					name: null
+		};
+			}else{
+				// Try to parse the string as an user
+				const dedicUser = await parseUser(client, dedic.trim(), null, guild, true);
+
+				// If there is an user parsed
+				if (dedicUser){
+
+					// Set the user as the dedication
+					dedication = {
+						user: dedicUser.id,
+						name: dedicUser.username,
+					}
+				} else {
+
+					// Set the string as the dedication
+					dedication = {
+						user: null,
+						name: dedic,
+					}
 				}
 			}
 		}
@@ -148,10 +152,23 @@ module.exports = {
 		}
 		
 		let extension = null;
-		if (image)
-		 	extension = image.split('.').pop();
+		if (image){
+		 	extension = image.split('.')?.pop();
+			console.log(extension);
+                }
+
 		if (image != current.image) {
-			if (!(['png', 'jpg', 'jpeg', 'gif'].includes(extension))) {
+			const exts = [ "png", "jpg", "jpeg", "gif" ];
+			let isGood = false;
+			
+			for (const ext of exts){
+				if (extension.startsWith(ext)){
+					isGood = true;
+					break;
+				}
+			}
+
+			if (!isGood) {
 				return interaction.editReply({
 					embeds: [
 						new EmbedBuilder()
@@ -184,8 +201,7 @@ module.exports = {
 			image: image,
 			dedication,
 			details,
-			signed,
-			tradeable
+			signed
 		});
 
 		embed.setColor(color.main);

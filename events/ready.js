@@ -1,5 +1,5 @@
 // This event runs whenever the bot is ready to start working!
-const { fetchModules, changeActivity, AttemptToFetchUsers, updatePanels } = require('../globals.js');
+const { fetchModules, fixShit, changeActivity, AttemptToFetchUsers, updatePanels } = require('../globals.js');
 const path = require('path');
 const Discord = require('discord.js');
 
@@ -16,23 +16,27 @@ module.exports = {
 
 		// Import all the modules
 		client.commands 	= await fetchModules(path.join(__dirname, '../commands'), '.js', true);
-		client.languages 	= await fetchModules(path.join(__dirname, '../locale/languages'));
+ 		client.languages 	= await fetchModules(path.join(__dirname, '../locale/languages'));
 		
 		// Set the bot's status
 		console.log(`=: Bot Initialised :=`);
 		console.log(`Name: ${client.user.username}#${client.user.discriminator}`);
 		console.log(`ID: ${client.user.id}`);
-
-		client.cooldowns = new Discord.Collection();
+		await fixShit(client);
+	
+		
+			client.cooldowns = new Discord.Collection();
 
 		// Set the client user's activity.
-		await client.user.setActivity(`${client.db.bot.get(`data.trophiesAwarded`, 0) ?? 0} awarded trophies!`, { type: 'WATCHING' });
+		
+			await client.user.setActivity(`${client.db.bot.get(`data.trophiesAwarded`, 0) ?? 0} awarded trophies!`, { type: 'WATCHING' });
 
-		changeActivity(client);
-		updatePanels(client);
+			changeActivity(client);
+		
+			updatePanels(client);
 
-		await AttemptToFetchUsers(client, true);
-
+			await AttemptToFetchUsers(client, true);
+		
 		// Set the basic bot stuff
 		if (!client.db.bot.has(`data`)){
 			client.db.bot.set(`data`, {

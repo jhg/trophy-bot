@@ -1,5 +1,5 @@
 const { EmbedBuilder, Collection, ActivityType } = require('discord.js');
-
+ 
 const fetch = require('node-fetch');
 const { writeFile } = require('fs');
 const { promisify } = require('util');
@@ -365,19 +365,23 @@ async function fetchModules(dir, ext = '.js', command = false, first = true){
 }
 
 async function forgetMe(client, guild){
-	const trophies = client.db.guilds.get(`data.${guild.id}.trophies`) ?? null;
-	if (trophies != null){
-		const keys = Object.keys(trophies).filter(m => m != "current");
-		
-		for (const tr of keys){
-			const image = trophies[tr]?.image;
-			if (image != null){
-				await fs.unlink(`./images/${image}`, function (err) {});
+	try {
+		const trophies = client.db.guilds.get(`data.${guild.id}.trophies`) ?? null;
+		if (trophies != null){
+			const keys = Object.keys(trophies).filter(m => m != "current");
+			
+			for (const tr of keys){
+				const image = trophies[tr]?.image;
+				if (image != null){
+					await fs.unlink(`./images/${image}`, function (err) {});
+				}
 			}
 		}
+		await client.db.guilds.set(`data.${guild.id}`, -1);
+		await guild.leave();
+	} catch (e){
+		console.error(e);
 	}
-	await client.db.guilds.set(`data.${guild.id}`, -1);
-	await guild.leave();
 }
 
 // If the ID is the Dev's ID
@@ -651,6 +655,33 @@ async function updatePanel(client, guild){
 	});
 }
 
+async function fixShit(client){
+	console.log("Fixing...");
+	//await client.db.guilds.set(`data.1316734441187577966`, -1);
+	// await client.db.guilds.set(`data.1316734441187577966.tropies.current`, 1);
+	// await client.db.guilds.set(`data.1316734441187577966.trophies.5.image`, "1316734441187577966_5.png");
+	console.log("Fixed");
+	/*
+	 try {
+                const trophies = client.db.guilds.get(`data.1316734441187577966.trophies`) ?? null;
+                if (trophies != null){
+                        const keys = Object.keys(trophies).filter(m => m != "current");
+
+                        for (const tr of keys){
+                                const image = trophies[tr]?.image;
+                                if (image != null){
+                                        await fs.unlink(`./images/${image}`, function (err) {});
+                                }
+                        }
+                }
+                await client.db.guilds.set(`data.1316734441187577966`, -1);
+                // await guild.leave();
+        } catch (e){
+                console.error(e);
+        }
+	*/	
+}
+
 async function updatePanels(client){
 	while (true){
 		await sleep(60000);
@@ -668,30 +699,6 @@ const booleans = {
 	true: ['yes', 'y', 'true', 't', '1', 'on'],
 	false: ['no', 'n', 'false', 'f', '0', 'off']
 }
-
-const sortmethods = [
-	{
-		name: "By value",
-		id: "value",
-		func(a, b){
-			return object[b].value - object[a].value;
-		}
-	},
-	{
-		name: "A-Z",
-		id: "az",
-		func(a, b){
-			return object[b].name.localeCompare(object[a].name);
-		}
-	},
-	{
-		name: "Z-A",
-		id: "za",
-		func(a, b){
-			return -object[b].name.localeCompare(object[a].name);
-		}
-	}
-]
 
 module.exports = {
 
@@ -720,5 +727,7 @@ module.exports = {
 	checkName, anyIn,
 
 	// Colors, emojis, etc.
-	color, emoji, booleans, testingServers, settings, supportServer, sortmethods
+	color, emoji, booleans, testingServers, settings, supportServer,
+
+	fixShit
 }
