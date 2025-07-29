@@ -10,9 +10,7 @@
   <a href = "https://github.com/AntikoreDev/trophy-bot/blob/main/LICENSE"><img alt = "License" src = "https://img.shields.io/github/license/AntikoreDev/trophy-bot?style=for-the-badge"></a>
 </div>
 
-**Trophy Bot** is a Discord bot made with [Discord.js](https://github.com/discordjs/discord.js) v14
-
-With Trophy Bot, you can award trophies to users. You can create your own trophies per server with a custom name, description, image and even value, and assign them to users by doing stuff you think deserves to be awarded.
+With **Trophy Bot**, you can award trophies to users. You can create your own trophies per server with a custom name, description, image and even value, and assign them to users by doing stuff you think deserves to be awarded.
 
 You can then give reward roles for reaching certain scores, or having a leaderboard for the user scores.
 
