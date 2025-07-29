@@ -176,10 +176,10 @@ async function doRewardRoles(client, guild, id){
 	// Check if the bot has the manage roles permission
 	try {
 		const manageRoles = me.permissions.has('MANAGE_ROLES');
+		if (!manageRoles) return;
 	} catch (e) {
 		return;
 	}
-	if (!manageRoles) return;
 
 	// Get all the reward roles
 	const rewards = client.db.guilds.get(`data.${guild.id}.rewards`);
